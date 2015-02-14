@@ -19,6 +19,6 @@ awk
 
 Installation:
 
-tar xvf vim-plugins-1.0.tar.gz
-cd vim-plugins-1.0
+tar xvf vim-plugins-1.1.tar.gz
+cd vim-plugins-1.1
 ./vim-plugins.sh
