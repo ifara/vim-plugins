@@ -35,8 +35,6 @@
 PM_NAME=python-mode
 ST_NAME=supertab
 IL_NAME=indentLine
-ST_VERSION=${ST_VERSION:-2.1}
-ST_SOURCE="https://github.com/ervandew/${ST_NAME}/archive/${ST_VERSION}.tar.gz"
 PATHOGEN="https://tpo.pe/pathogen.vim"
 VIM=".vim"
 VIMRC=".vimrc"
@@ -51,27 +49,34 @@ echo "Create directories..."
 mkdir -p $VIM $AUTOLOAD $BUNDLE $PLUGIN
 
 # install pathogen only if new file exists
-echo "Install pathogen.vim..."
+echo "------------------------"
+echo "| Install pathogen.vim |"
+echo "------------------------"
 wget -N --directory-prefix=$AUTOLOAD $PATHOGEN
-
 # enable pathogen
+cat vimrc >> $HOME/$VIMRC
 cat enable_pathogen >> $HOME/$VIMRC
-
 # removes duplicate lines from .vimrc
 awk '!x[$0]++' $HOME/$VIMRC > $HOME/$VIMRC.NEW
 mv $HOME/$VIMRC.NEW $HOME/$VIMRC
 
+echo "--------------------"
+echo "| Install supertab |"
+echo "--------------------"
 cd $PLUGIN
-echo "Install supertab"
 rm -rf $ST_NAME
 git clone https://github.com/ervandew/supertab.git
 
+echo "---------------------------"
+echo "| Install vim python-mode |"
+echo "---------------------------"
 cd $BUNDLE
-echo "Install vim python-mode..."
 rm -rf $PM_NAME
 git clone git://github.com/klen/python-mode.git
 
-echo "Install indentLine..."
+echo "----------------------"
+echo "| Install indentLine |"
+echo "----------------------"
 rm -rf $IL_NAME
 git clone https://github.com/Yggdroot/indentLine.git
 
