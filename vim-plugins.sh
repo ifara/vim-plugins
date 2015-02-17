@@ -25,7 +25,7 @@
 # indentLine 
 # supertab
 # vim-powerline
-
+# vim-colorschemes
 
 # Requirements:
 # vim >= 7.3 + Python or Python3
@@ -40,6 +40,7 @@ PM_NAME=python-mode
 ST_NAME=supertab
 IL_NAME=indentLine
 PL_NAME=vim-powerline
+CS_NAME=colorschemes
 PATHOGEN="https://tpo.pe/pathogen.vim"
 VIM=".vim"
 VIMRC=".vimrc"
@@ -52,7 +53,6 @@ set -e
 # create directories if not exists
 echo "Create directories..."
 mkdir -p $VIM $AUTOLOAD $BUNDLE $PLUGIN
-
 
 echo
 echo "------------------------------------"
@@ -108,6 +108,14 @@ echo "-------------------------"
 echo
 rm -rf $BUNDLE/$PL_NAME
 git clone https://github.com/Lokaltog/vim-powerline.git $BUNDLE/$PL_NAME
+
+echo
+echo "----------------------------"
+echo "| Install vim-colorschemes |"
+echo "----------------------------"
+echo
+rm -rf $BUNDLE/$CS_NAME
+git clone https://github.com/flazz/vim-colorschemes.git $BUNDLE/$CS_NAME
 
 echo
 echo
