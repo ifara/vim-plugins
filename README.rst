@@ -11,9 +11,10 @@ vim >= 7.3 + Python or Python3
 
 Installation requirements as usually found 
 in all unix-like systems:
-GNU wget
-Git
-awk
+
+- GNU wget
+- Git
+- awk
 
 Installation:
 
