@@ -22,3 +22,8 @@ Installation:
     $ tar xvf vim-plugins-1.3.tar.gz
     $ cd vim-plugins-1.3
     $ ./vim-plugins.sh
+
+Screenshot:
+
+.. image:: https://raw.githubusercontent.com/dslackw/vim-plugins/master/vim-plugins-ss.png
+    :target:: https://github.com/dslackw/vim-plugins
