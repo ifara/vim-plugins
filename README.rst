@@ -26,4 +26,4 @@ Installation:
 Screenshot:
 
 .. image:: https://raw.githubusercontent.com/dslackw/vim-plugins/master/vim-plugins-ss.png
-    :target:: https://github.com/dslackw/vim-plugins
+    :target: https://github.com/dslackw/vim-plugins
