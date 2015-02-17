@@ -20,8 +20,12 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# This is a simple bash script that installs vim python-mode plugin
-# witn indentLine and supertab for Unix-like systems.
+# This is a simple bash script that installs vim plugins:
+# python-mode
+# indentLine 
+# supertab
+# vim-powerline
+
 
 # Requirements:
 # vim >= 7.3 + Python or Python3
@@ -35,6 +39,7 @@
 PM_NAME=python-mode
 ST_NAME=supertab
 IL_NAME=indentLine
+PL_NAME=vim-powerline
 PATHOGEN="https://tpo.pe/pathogen.vim"
 VIM=".vim"
 VIMRC=".vimrc"
@@ -48,36 +53,62 @@ set -e
 echo "Create directories..."
 mkdir -p $VIM $AUTOLOAD $BUNDLE $PLUGIN
 
+
+echo
+echo "------------------------------------"
+echo "|             S T A R T            |"
+echo "------------------------------------"
+echo
+
+# copy my vimrc
+cat vimrc >> $HOME/$VIMRC
+
 # install pathogen only if new file exists
+echo
 echo "------------------------"
 echo "| Install pathogen.vim |"
 echo "------------------------"
+echo
 wget -N --directory-prefix=$AUTOLOAD $PATHOGEN
 # enable pathogen
-cat vimrc >> $HOME/$VIMRC
 cat enable_pathogen >> $HOME/$VIMRC
+
 # removes duplicate lines from .vimrc
 awk '!x[$0]++' $HOME/$VIMRC > $HOME/$VIMRC.NEW
 mv $HOME/$VIMRC.NEW $HOME/$VIMRC
 
+echo
 echo "--------------------"
 echo "| Install supertab |"
 echo "--------------------"
-cd $PLUGIN
-rm -rf $ST_NAME
-git clone https://github.com/ervandew/supertab.git
+echo
+rm -rf $PLUGIN/$ST_NAME
+git clone https://github.com/ervandew/supertab.git $PLUGIN/$ST_NAME
 
+echo
 echo "---------------------------"
 echo "| Install vim python-mode |"
 echo "---------------------------"
-cd $BUNDLE
-rm -rf $PM_NAME
-git clone git://github.com/klen/python-mode.git
+echo
+rm -rf $BUNDLE/$PM_NAME
+git clone git://github.com/klen/python-mode.git $BUNDLE/$PM_NAME
 
+echo
 echo "----------------------"
 echo "| Install indentLine |"
 echo "----------------------"
-rm -rf $IL_NAME
-git clone https://github.com/Yggdroot/indentLine.git
+echo
+rm -rf $BUNDLE/$IL_NAME
+git clone https://github.com/Yggdroot/indentLine.git $BUNDLE/$IL_NAME
 
+echo
+echo "-------------------------"
+echo "| Install vim-powerline |"
+echo "-------------------------"
+echo
+rm -rf $BUNDLE/$PL_NAME
+git clone https://github.com/Lokaltog/vim-powerline.git $BUNDLE/$PL_NAME
+
+echo
+echo
 echo "Done!"
