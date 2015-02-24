@@ -118,6 +118,7 @@ echo
 rm -rf $COLORS/$CS_NAME
 git clone https://github.com/flazz/vim-colorschemes.git $COLORS/$CS_NAME
 cp -a $COLORS/$CS_NAME/colors/*.vim $COLORS
+# clean
 rm -rf $COLORS/$CS_NAME
 
 echo
