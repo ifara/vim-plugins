@@ -20,8 +20,8 @@ Installation:
 
 .. code-block:: bash
 
-    $ tar xvf vim-plugins-1.3.tar.gz
-    $ cd vim-plugins-1.3
+    $ tar xvf vim-plugins-1.4.tar.gz
+    $ cd vim-plugins-1.4
     $ ./vim-plugins.sh
 
 Screenshot:

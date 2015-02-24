@@ -47,12 +47,13 @@ VIMRC=".vimrc"
 PLUGIN=$(echo ${HOME}/${VIM}/plugin)
 AUTOLOAD=$(echo ${HOME}/${VIM}/autoload)
 BUNDLE=$(echo ${HOME}/${VIM}/bundle)
+COLORS=$(echo ${HOME}/${VIM}/colors)
 
 set -e
 
 # create directories if not exists
 echo "Create directories..."
-mkdir -p $VIM $AUTOLOAD $BUNDLE $PLUGIN
+mkdir -p $VIM $AUTOLOAD $BUNDLE $PLUGIN $COLORS
 
 echo
 echo "------------------------------------"
@@ -114,8 +115,10 @@ echo "----------------------------"
 echo "| Install vim-colorschemes |"
 echo "----------------------------"
 echo
-rm -rf $BUNDLE/$CS_NAME
-git clone https://github.com/flazz/vim-colorschemes.git $BUNDLE/$CS_NAME
+rm -rf $COLORS/$CS_NAME
+git clone https://github.com/flazz/vim-colorschemes.git $COLORS/$CS_NAME
+cp -a $COLORS/$CS_NAME/colors/*.vim $COLORS
+rm -rf $COLORS/$CS_NAME
 
 echo
 echo
