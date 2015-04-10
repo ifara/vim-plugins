@@ -1,4 +1,4 @@
-This is a simple bash script that installs vim plugins: python-mode, indentLine, supertab, vim-powerline, vim-colorschemes.
+This is a simple bash script that installs vim plugins: python-mode, indentLine, supertab, vim-powerline and vim-colorschemes.
 
 - Python-mode project page: https://github.com/klen/python-mode
 - indentLine: https://github.com/Yggdroot/indentLine
@@ -20,8 +20,8 @@ Installation:
 
 .. code-block:: bash
 
-    $ tar xvf vim-plugins-1.4.tar.gz
-    $ cd vim-plugins-1.4
+    $ tar xvf vim-plugins-1.6.tar.gz
+    $ cd vim-plugins-1.6
     $ ./vim-plugins.sh
 
 Screenshot:
